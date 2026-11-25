@@ -1,0 +1,8 @@
+# 构建产物
+build/
+*.o
+moc_*.cpp
+moc_*.h
+moc_predefs.h
+Makefile
+.qmake.stash

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Service
+ServiceTypes=LXQtPanel/Plugin
+Icon=utilities-system-monitor
+Name=System Monitor (text)
+Name[zh_CN]=系统监视（文字）
+Comment=CPU, memory, network speed, power and temperature at a glance
+Comment[zh_CN]=在面板上用文字显示 CPU、内存、网速、功耗和温度

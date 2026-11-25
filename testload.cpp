@@ -1,5 +1,6 @@
 #include <QApplication>
 #include <QDebug>
+#include <QFileInfo>
 #include <QPluginLoader>
 #include <QTimer>
 
@@ -8,7 +9,10 @@
 int main(int argc, char **argv)
 {
     QApplication app(argc, argv);
-    QPluginLoader loader(QStringLiteral("/home/hackmo/.local/src/lxqt-sysmon/build/libsysmon.so"));
+    // 用法：./testload [libsysmon.so 路径]（默认 build/libsysmon.so）
+    const QString path = argc > 1 ? QString::fromLocal8Bit(argv[1])
+                                  : QStringLiteral("build/libsysmon.so");
+    QPluginLoader loader(QFileInfo(path).absoluteFilePath());
     if (!loader.load()) {
         qWarning() << "load failed:" << loader.errorString();
         return 1;
